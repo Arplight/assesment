@@ -1,0 +1,51 @@
+import React, { FC } from "react";
+import { Box, useTheme } from "@mui/material";
+import Container from "@mui/material/Container";
+import { FooterLogo } from "../logo/FooterLogo";
+
+const Footer: FC = () => {
+  const { breakpoints } = useTheme();
+  return (
+    <Box
+      component="footer"
+      sx={{ background: "linear-gradient(to bottom, #173039, #00b4c9)" }}
+    >
+      <Container sx={{ [breakpoints.up("sm")]: { maxWidth: "1400px" } }}>
+        <Box
+          sx={{
+            textAlign: "left",
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            flexDirection: { xs: "column", sm: "row" },
+            gap: { xs: 2, sm: 0 },
+            py: { xs: 2, sm: 0 }
+          }}
+        >
+          <FooterLogo />
+          <Box
+            sx={{
+              width: { xs: "100%", sm: "324px" },
+              maxWidth: "100%",
+              flexShrink: 0,
+              height: "45px",
+              borderRadius: "6px",
+              backgroundColor: "#fff",
+              color: "#00c1c9",
+              fontSize: "30px",
+              lineHeight: "6px",
+              fontWeight: "bold",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center"
+            }}
+          >
+            HELP
+          </Box>
+        </Box>
+      </Container>
+    </Box>
+  );
+};
+
+export default Footer;
